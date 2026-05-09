@@ -4,9 +4,9 @@ import google.generativeai as genai
 from datetime import datetime
 
 # Config
-TELEGRAM_TOKEN = os.environ["TELEGRAM_TOKEN"]
-CHAT_ID = os.environ["CHAT_ID"]
-GEMINI_API_KEY = os.environ["GEMINI_API_KEY"]
+TELEGRAM_TOKEN = os.environ[8729073556:AAGTtmztJBkoZVBPR_FVBLCn2vTUCxyedpo]
+CHAT_ID = os.environ[-1003651166776]
+GEMINI_API_KEY = os.environ[AIzaSyDHbFFP3H0xknyAhtyBlJt8Kda7hti6h0A]
 
 # Setup Gemini
 genai.configure(api_key=GEMINI_API_KEY)
