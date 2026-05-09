@@ -41,7 +41,7 @@ Use the same 3 sections but in Thai.
 Keep each section to 3-4 lines. Format with emojis. Be specific and insightful.
 """
     response = client.models.generate_content(
-        model="gemini-3-flash",
+        model="gemini-3-flash-preview",
         contents=prompt
     )
     return response.text
