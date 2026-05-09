@@ -22,7 +22,6 @@ Start with: Daily Market Brief - {today}
 """
     model = genai.GenerativeModel("gemini-2.0-flash-exp")
     response = model.generate_content(prompt)
-    )
     return response.text
 
 def send_telegram(message):
