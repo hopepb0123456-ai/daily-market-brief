@@ -1,13 +1,14 @@
 import os
 import requests
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 from datetime import datetime
 
 TELEGRAM_TOKEN = os.environ["TELEGRAM_TOKEN"]
 CHAT_ID = os.environ["CHAT_ID"]
 GEMINI_API_KEY = os.environ["GEMINI_API_KEY"]
 
-genai.configure(api_key=GEMINI_API_KEY)
+client = genai.Client(api_key=GEMINI_API_KEY)
 
 def generate_brief():
     today = datetime.now().strftime("%A, %d %B %Y")
@@ -20,8 +21,10 @@ AI Trends - Biggest AI news, new model releases, business impact.
 Format with emojis. Keep each section to 3-4 lines.
 Start with: Daily Market Brief - {today}
 """
-    model = genai.GenerativeModel("gemini-2.0-flash-exp")
-    response = model.generate_content(prompt)
+    response = client.models.generate_content(
+        model="gemini-2.0-flash-exp",
+        contents=prompt
+    )
     return response.text
 
 def send_telegram(message):
