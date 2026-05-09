@@ -135,7 +135,7 @@ Keep each section to 3-4 lines. Be specific with real numbers.
 """
 
     response = client.models.generate_content(
-        model="gemini-3-flash-preview",
+        model="gemini-2.5-flash",
         contents=prompt,
         config=types.GenerateContentConfig(
             tools=[types.Tool(google_search=types.GoogleSearch())]
