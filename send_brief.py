@@ -1,16 +1,15 @@
 import os
 import requests
-import google.generativeai as genai
+from google import genai
 from datetime import datetime
 
 # Config
-TELEGRAM_TOKEN = os.environ[8729073556:AAGTtmztJBkoZVBPR_FVBLCn2vTUCxyedpo]
+TELEGRAM_TOKEN = os.environ[8729073556:AAH2m_XF76WZM2RA04bfd-EMf1OkLbXZVSo]
 CHAT_ID = os.environ[-1003651166776]
-GEMINI_API_KEY = os.environ[AIzaSyDHbFFP3H0xknyAhtyBlJt8Kda7hti6h0A]
+GEMINI_API_KEY = os.environ[AIzaSyBzyU422gM71CykUbEYhNpYCBs-UObM-58]
 
 # Setup Gemini
-genai.configure(api_key=GEMINI_API_KEY)
-model = genai.GenerativeModel("gemini-1.5-flash")
+client = genai.Client(api_key=GEMINI_API_KEY)
 
 # Generate content
 def generate_brief():
@@ -35,7 +34,10 @@ You are a financial and tech analyst. Write a concise daily briefing for {today}
 Format it nicely with emojis. Keep each section to 3-4 lines. Be specific and insightful.
 Write in English. Start with: 📅 Daily Market Brief — {today}
 """
-    response = model.generate_content(prompt)
+    response = client.models.generate_content(
+        model="gemini-2.0-flash",
+        contents=prompt
+    )
     return response.text
 
 # Send to Telegram
