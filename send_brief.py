@@ -11,17 +11,37 @@ client = genai.Client(api_key=GEMINI_API_KEY)
 
 def generate_brief():
     today = datetime.now().strftime("%A, %d %B %Y")
-    prompt = f"""You are a financial and tech analyst. Write a concise daily briefing for {today} covering:
+    prompt = f"""You are a financial and tech analyst. Write a daily briefing for {today}.
 
-US Markets - Key index movements, what drove the market, one stock to watch.
-Economics - Latest macro news (Fed, inflation, jobs, GDP) and what it means.
-AI Trends - Biggest AI news, new model releases, business impact.
+Write it in TWO sections:
 
-Format with emojis. Keep each section to 3-4 lines.
-Start with: Daily Market Brief - {today}
+FIRST write in English:
+📅 Daily Market Brief — {today}
+
+📈 US Markets
+- Key index movements (S&P 500, Nasdaq, Dow Jones)
+- What drove the market
+- One stock to watch
+
+🏦 Economics
+- Latest macro news (Fed, inflation, jobs, GDP)
+- What it means for investors
+
+🤖 AI Trends
+- Biggest AI news today
+- New model releases or research
+- Business impact
+
+Then write a separator line: ——————————————
+
+THEN write the SAME content translated in Thai:
+📅 สรุปตลาดประจำวัน — {today}
+
+Use the same 3 sections but in Thai.
+Keep each section to 3-4 lines. Format with emojis. Be specific and insightful.
 """
     response = client.models.generate_content(
-        model="gemini-2.5-flash",
+        model="gemini-3-flash",
         contents=prompt
     )
     return response.text
