@@ -126,11 +126,9 @@ Using this real data above AND searching the web for more context, write a daily
 - Biggest AI news today
 - New releases or research
 
-Write it TWICE:
-First in English starting with: 📅 Daily Market Brief — {today}
-Then separator: ——————————————
-Then same content in Thai starting with: 📅 สรุปตลาดประจำวัน — {today}
-
+Write everything in Thai only.
+Start with: 📅 สรุปตลาดประจำวัน — {today}
+Keep numbers and stock symbols in English (S&P 500, BTC, ETH etc.)
 Keep each section to 3-4 lines. Be specific with real numbers.
 """
 
