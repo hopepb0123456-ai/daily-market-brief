@@ -1,7 +1,6 @@
 import os
 import requests
 from google import genai
-from google.genai import types
 from datetime import datetime
 
 TELEGRAM_TOKEN = os.environ["TELEGRAM_TOKEN"]
@@ -22,7 +21,7 @@ Format with emojis. Keep each section to 3-4 lines.
 Start with: Daily Market Brief - {today}
 """
     response = client.models.generate_content(
-        model="gemini-2.0-flash-exp",
+        model="gemini-2.5-flash",
         contents=prompt
     )
     return response.text
