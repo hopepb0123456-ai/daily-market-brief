@@ -3,9 +3,9 @@ import requests
 from google import genai
 from datetime import datetime
 
-TELEGRAM_TOKEN = os.environ[8729073556:AAEBdb_30p1VgHNBMvpkF2ZVVGzgqQFJwoE]
-CHAT_ID = os.environ[-1003651166776]
-GEMINI_API_KEY = os.environ[AIzaSyDmwwZ2SsU7l-cOG8RzyZmZq93CbweqAzI]
+TELEGRAM_TOKEN = os.environ["TELEGRAM_TOKEN"]
+CHAT_ID = os.environ["CHAT_ID"]
+GEMINI_API_KEY = os.environ["GEMINI_API_KEY"]
 
 client = genai.Client(api_key=GEMINI_API_KEY)
 
