@@ -2,17 +2,17 @@ name: Daily Market Brief
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # 7:00 AM Bangkok (UTC+7) = 00:00 UTC
-  workflow_dispatch:  # allows manual trigger
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 jobs:
   send-brief:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
